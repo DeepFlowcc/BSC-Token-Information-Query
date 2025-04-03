@@ -1,6 +1,6 @@
 // BSC Scan API integration (optional, can be used as a fallback)
 export async function fetchBscTransactions(tokenAddress) {
-  const BSC_API_KEY = '7UZAGYM3NQUPTYAAFI49IPDTKCJRR9PCYR';
+  const BSC_API_KEY = 'your bsc api key here';
   const apiUrl = `https://api.bscscan.com/api?module=account&action=tokentx&contractaddress=${tokenAddress}&page=1&offset=10&sort=desc&apikey=${BSC_API_KEY}`;
   
   try {
