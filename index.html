@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Transaction Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Fix for "global is not defined" error
+    window.global = window;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Token Transaction Tracker</h1>
+    <div class="input-container">
+      <input type="text" id="tokenAddress" placeholder="Enter Token Address (e.g., 0x...)">
+      <select id="chainSelect">
+        <option value="eth">Ethereum</option>
+        <option value="bsc">Binance Smart Chain</option>
+        <option value="polygon">Polygon</option>
+      </select>
+      <button id="searchBtn" class="primary-btn">Search Transactions</button>
+    </div>
+    <div id="loading" class="loading hidden">Loading...</div>
+    <div id="error" class="error hidden"></div>
+    <div id="tokenInfo" class="token-info-container hidden">
+      <div class="token-info-card">
+        <div class="token-info-header">
+          <div class="token-logo" id="tokenLogo">
+            <!-- Token logo will be inserted here -->
+          </div>
+          <div class="token-name-container">
+            <div class="token-name" id="tokenName">Loading...</div>
+            <div class="token-symbol" id="tokenSymbol"></div>
+          </div>
+        </div>
+        <div class="token-info-grid">
+          <div class="info-item">
+            <div class="info-label">Price</div>
+            <div class="info-value" id="tokenPrice">-</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">24h Change</div>
+            <div class="info-value">
+              <span class="price-change" id="priceChange">-</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Holders</div>
+            <div class="info-value" id="holderCount">-</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Contract</div>
+            <div class="info-value">
+              <a href="#" id="contractLink" target="_blank">
+                <span id="contractAddress">-</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="results" class="hidden">
+      <div class="header-container">
+        <h2>Latest Transactions</h2>
+        <button id="refreshBtn" class="refresh-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 4v6h-6"></path>
+            <path d="M1 20v-6h6"></path>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"></path>
+            <path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"></path>
+          </svg>
+          Refresh
+        </button>
+      </div>
+      <div class="table-container">
+        <table id="transactionsTable">
+          <thead>
+            <tr>
+              <th>Transaction Hash</th>
+              <th>Block Number</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Value</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="transactionsBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
