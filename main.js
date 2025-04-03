@@ -58,8 +58,8 @@ const chainMapping = {
 };
 
 // API Keys
-const MORALIS_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjA1YWUzOWQ0LTlhM2EtNDUyZC04MDU3LTczNzY1ZDAyYjVjYiIsIm9yZ0lkIjoiNDM5MzExIiwidXNlcklkIjoiNDUxOTYxIiwidHlwZUlkIjoiN2U2ZDEwMjAtMmMwNi00YjAxLWExM2EtMmRmNDAzMjZjMDgyIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NDM2MDU2MTUsImV4cCI6NDg5OTM2NTYxNX0.5LywehWKoABQWOzJAkglrLvmh-4cn1rvEh6x0JCuP7I';
-const BSC_API_KEY = '7UZAGYM3NQUPTYAAFI49IPDTKCJRR9PCYR';
+const MORALIS_API_KEY = 'your moralis api key here';
+const BSC_API_KEY = 'your bsc api key here';
 
 // Initialize Moralis
 async function initMoralis() {
